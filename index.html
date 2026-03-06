@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduChat</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="sidebar">
+<h2>Chats</h2>
+<ul id="history"></ul>
+</div>
+
+<div class="main">
+
+<div class="chat" id="chat"></div>
+
+<div class="modes">
+
+<button data-mode="notes">📚 Notes</button>
+<button data-mode="explain">🧠 Explain</button>
+<button data-mode="quiz">❓ Quiz</button>
+<button data-mode="summary">📑 Summary</button>
+<button data-mode="audio">🎧 Audio</button>
+
+</div>
+
+<div class="inputArea">
+
+<button id="plusBtn">
+<i class="fa fa-plus"></i>
+</button>
+
+<input id="prompt"
+placeholder="Ask anything..."/>
+
+<button id="voiceBtn">
+<i class="fa fa-microphone"></i>
+</button>
+
+<button id="sendBtn">
+<i class="fa fa-paper-plane"></i>
+</button>
+
+</div>
+
+<div class="popup" id="popup">
+
+<input type="file"
+id="imageUpload"
+accept="image/*"
+multiple>
+
+<p>Upload up to 7 images</p>
+
+</div>
+
+<div id="preview"></div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
