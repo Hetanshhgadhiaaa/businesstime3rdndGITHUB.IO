@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,30 +16,61 @@ margin:0;
 font-family:Arial, sans-serif;
 background:#f7f7f8;
 display:flex;
-flex-direction:column;
-align-items:center;
 height:100vh;
 }
 
-/* logo */
+/* SIDEBAR */
 
-.logo{
-font-size:32px;
-font-weight:bold;
-margin-top:40px;
+.sidebar{
+width:250px;
+background:#202123;
+color:white;
+display:flex;
+flex-direction:column;
+padding:10px;
 }
 
-/* chat area */
+.sidebar button{
+margin:5px 0;
+padding:10px;
+border:none;
+background:#343541;
+color:white;
+cursor:pointer;
+border-radius:6px;
+}
 
-#chatBox{
-width:70%;
-max-width:900px;
-margin-top:20px;
+.chat-list{
 flex-grow:1;
 overflow-y:auto;
 }
 
-/* messages */
+/* MAIN AREA */
+
+.main{
+flex-grow:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+/* LOGO */
+
+.logo{
+font-size:28px;
+margin-top:20px;
+font-weight:bold;
+}
+
+/* CHAT */
+
+#chatBox{
+width:70%;
+max-width:900px;
+flex-grow:1;
+overflow-y:auto;
+margin-top:20px;
+}
 
 .message{
 padding:12px 16px;
@@ -60,7 +90,7 @@ background:white;
 border:1px solid #ddd;
 }
 
-/* search container */
+/* SEARCH BAR */
 
 .search-container{
 width:70%;
@@ -69,40 +99,27 @@ position:relative;
 margin:20px 0 40px 0;
 }
 
-/* search bar */
-
 .search-bar{
 width:100%;
 padding:20px;
-font-size:18px;
 border-radius:30px;
 border:1px solid #ccc;
-outline:none;
+font-size:18px;
 }
-
-/* icons */
 
 .icon{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-font-size:20px;
 cursor:pointer;
+font-size:20px;
 }
 
-.plus{
-left:15px;
-}
+.plus{ left:15px; }
+.mic{ right:70px; }
+.send{ right:30px; }
 
-.mic{
-right:60px;
-}
-
-.send{
-right:20px;
-}
-
-/* feature menu */
+/* FEATURES MENU */
 
 .features{
 display:none;
@@ -113,7 +130,7 @@ background:white;
 border:1px solid #ddd;
 border-radius:10px;
 padding:10px;
-width:220px;
+width:250px;
 }
 
 .features button{
@@ -131,6 +148,22 @@ cursor:pointer;
 </head>
 
 <body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<button onclick="startNewChat()">+ New Chat</button>
+
+<div class="chat-list" id="chatList">
+<!-- saved chats appear here -->
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
 
 <div class="logo">Business Time AI</div>
 
@@ -151,12 +184,27 @@ placeholder="Ask anything..."
 
 <span class="icon send" onclick="sendMessage()">➤</span>
 
+<!-- FEATURES -->
+
 <div id="featureMenu" class="features">
 
-<button>🎧 Audio Answer</button>
-<button>📝 Detailed Notes</button>
-<button>🧠 Create Mind Map</button>
+<button>📄 Upload Document</button>
+
 <button>🎨 Generate Image</button>
+
+<button>🧠 Create Mind Map</button>
+
+<button>🔎 Research Mode</button>
+
+<button>💻 Code Assistant</button>
+
+<button>🎧 Audio Answer</button>
+
+<button>📝 Detailed Notes</button>
+
+<button>📤 Export Notes</button>
+
+</div>
 
 </div>
 
@@ -167,14 +215,12 @@ placeholder="Ask anything..."
 <script>
 
 function toggleFeatures(){
-
 const menu=document.getElementById("featureMenu")
 
 menu.style.display =
 menu.style.display==="block"
 ? "none"
 : "block"
-
 }
 
 </script>
