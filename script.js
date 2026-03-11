@@ -52,7 +52,7 @@ chats.push({text:userMessage,type:"user"})
 
 inputBox.value=""
 
-const response=await fetch("https://ai-chat-worker.hetanshhgadhiaaa.workers.dev"
+const response=await fetch("https://ai-mentor.hetanshhgadhiaaa.workers.dev")
 {
 method:"POST",
 headers:{
